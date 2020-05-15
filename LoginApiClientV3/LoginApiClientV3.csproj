@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.2;net472</TargetFrameworks>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Solufemi91</Authors>
+    <PackageId>OlufemiLtd.Util.LoginApiClientV3</PackageId>
+    <Company>Olufemi Ltd</Company>
+    <Description>Client used to access login api</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.2.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>

@@ -15,15 +15,14 @@ namespace LoginApi.Controllers
             _loginWrapper = loginWrapper;
         }
 
-        // GET: api/Login
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] {  "100" };
         }
 
-        // POST: api/Login
         [HttpPost]
+        [Route("validuser")]
         public JsonResult Post([FromBody] LoginRequest loginRequest)
         {
             var result = _loginWrapper.ValidUser(loginRequest);
