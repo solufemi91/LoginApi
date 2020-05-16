@@ -8,6 +8,6 @@ namespace LoginApiClientV3
 {
     public interface ILoginClient
     {
-        Task<bool> PostValidUserAsync(LoginRequestDTO request);
+        Task<LoginResponseDTO> PostValidUserAsync(LoginRequestDTO request);
     }
 }

@@ -15,7 +15,7 @@ namespace TestClient
             var result =  obj.CallClientAsync().Result;
         }
 
-        public async Task<bool> CallClientAsync()
+        public async Task<LoginResponseDTO> CallClientAsync()
         {
             var client = new LoginClient();
 

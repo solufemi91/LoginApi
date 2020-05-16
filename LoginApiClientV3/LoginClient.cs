@@ -11,12 +11,12 @@ namespace LoginApiClientV3
         private string _url = "http://dev.loginapi.com/api/login/validuser";
         HttpClient _client = new HttpClient();
 
-        public async Task<bool> PostValidUserAsync(LoginRequestDTO request)
+        public async Task<LoginResponseDTO> PostValidUserAsync(LoginRequestDTO request)
         {
             var json = JsonConvert.SerializeObject(request);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await _client.PostAsync(_url, data);
-            var content = await response.Content.ReadAsAsync<bool>();
+            var content = await response.Content.ReadAsAsync<LoginResponseDTO>();
             return content;
         }
     }
