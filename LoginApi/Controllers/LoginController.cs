@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using LoginApi.Models;
 using LoginApi.Wrapper;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +26,7 @@ namespace LoginApi.Controllers
         [Route("validuser")]
         public JsonResult Post([FromBody] LoginRequest loginRequest)
         {
-            var result = _loginWrapper.ValidUser(loginRequest);
+            var result = _loginWrapper.ValidUser(loginRequest).ToList().FirstOrDefault();
             return new JsonResult(result);
         }
 

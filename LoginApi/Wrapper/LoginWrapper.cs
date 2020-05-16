@@ -15,11 +15,11 @@ namespace LoginApi.Wrapper
             _loginRepository = loginRepository;
         }
 
-        public bool ValidUser(LoginRequest loginRequest)
+        public IEnumerable<LoginDetails> ValidUser(LoginRequest loginRequest)
         {
             var result = _loginRepository.GetLogin(loginRequest);
 
-            return result.ToList().Count > 0;
+            return result;
         }
     }
 }

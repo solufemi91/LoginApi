@@ -8,6 +8,6 @@ namespace LoginApi.Wrapper
 {
     public interface ILoginWrapper
     {
-        bool ValidUser(LoginRequest loginRequest);
+        IEnumerable<LoginDetails> ValidUser(LoginRequest loginRequest);
     }
 }
