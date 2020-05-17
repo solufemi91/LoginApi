@@ -9,5 +9,7 @@ namespace LoginApi.Repository
     public interface ILoginRepository
     {
         IEnumerable<LoginDetails> GetLogin(LoginRequest loginRequest);
+
+        IEnumerable<BookingDetails> GetBookingDetails(int id);
     }
 }

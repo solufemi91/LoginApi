@@ -20,5 +20,15 @@ namespace LoginApi.Repository
                 return sqlConnection.Query<LoginDetails>(sql);
             }
         }
+
+        public IEnumerable<BookingDetails> GetBookingDetails(int id)
+        {
+            using (sqlConnection = new SqlConnection(connectionString))
+            {
+                string sql = $"EXEC get_booked_dates_info @LoginDetailsID = {id};";
+                sqlConnection.Open();
+                return sqlConnection.Query<BookingDetails>(sql);
+            }
+        }
     }
 }

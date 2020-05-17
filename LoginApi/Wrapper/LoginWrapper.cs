@@ -21,5 +21,12 @@ namespace LoginApi.Wrapper
 
             return result;
         }
+
+        public IEnumerable<BookingDetails> GetBookingDetails(int id)
+        {
+            var result = _loginRepository.GetBookingDetails(id);
+
+            return result;
+        }
     }
 }

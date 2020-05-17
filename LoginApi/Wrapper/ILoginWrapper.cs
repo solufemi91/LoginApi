@@ -9,5 +9,7 @@ namespace LoginApi.Wrapper
     public interface ILoginWrapper
     {
         IEnumerable<LoginDetails> ValidUser(LoginRequest loginRequest);
+
+        IEnumerable<BookingDetails> GetBookingDetails(int id);
     }
 }

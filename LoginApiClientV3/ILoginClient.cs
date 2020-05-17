@@ -9,5 +9,7 @@ namespace LoginApiClientV3
     public interface ILoginClient
     {
         Task<LoginResponseDTO> PostValidUserAsync(LoginRequestDTO request);
+
+        Task<IEnumerable<BookingDetailsDTO>> GetBookingDetailsAsync(int id);
     }
 }

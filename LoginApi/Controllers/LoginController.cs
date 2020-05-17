@@ -30,5 +30,12 @@ namespace LoginApi.Controllers
             return new JsonResult(result);
         }
 
+        [HttpGet("{id}")]
+        public JsonResult GetBookingDetails(int id)
+        {
+            var result = _loginWrapper.GetBookingDetails(id);
+            return new JsonResult(result);
+        }
+
     }
 }
