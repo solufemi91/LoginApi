@@ -24,5 +24,15 @@ namespace TestClient
 
             return result;
         }
+
+        
+    }
+
+    public static class Test
+    {
+        public static int MyFirstMethod()
+        {
+            return 1;
+        }
     }
 }

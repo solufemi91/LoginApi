@@ -14,6 +14,8 @@ namespace LoginApiClientV3.Models
 
         public DateTime EndTime { get; set; }
 
+        public string Location { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
