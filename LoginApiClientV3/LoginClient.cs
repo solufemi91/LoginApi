@@ -22,7 +22,7 @@ namespace LoginApiClientV3
             return content;
         }
 
-        public async Task<IEnumerable<BookingDetailsDTO>> GetBookingDetailsAsync(int id)
+        public async Task<IEnumerable<BookingDetailsDTO>> GetBookingDetailsAsync(int? id)
         {
             var request = $"{_baseURL}/{id}";
             var response = await _client.GetAsync(request);

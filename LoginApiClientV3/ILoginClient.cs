@@ -10,6 +10,6 @@ namespace LoginApiClientV3
     {
         Task<LoginResponseDTO> PostValidUserAsync(LoginRequestDTO request);
 
-        Task<IEnumerable<BookingDetailsDTO>> GetBookingDetailsAsync(int id);
+        Task<IEnumerable<BookingDetailsDTO>> GetBookingDetailsAsync(int? id);
     }
 }
