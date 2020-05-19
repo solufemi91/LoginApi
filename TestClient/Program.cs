@@ -8,19 +8,20 @@ namespace TestClient
 {
     public class Program
     {
+
+        public static int Test { get; set; }
         static void Main(string[] args)
         {
 
-            //Console.WriteLine("Hello World!");
-            //var obj = new Program();
-            //var result =  obj.CallClientAsync().Result;
+            Test = 1;
 
-            // generate the first week by putting 1st of May in the 5th index position
-            //int dayDateNumber = 0;
+            var listOfWeeks = new List<Week>();
 
-            var result = GenerateWeeks();
-
-
+            while (Test < 30)
+            {
+                listOfWeeks.Add(GenerateWeek());
+            }
+            
 
         }
 
@@ -33,11 +34,12 @@ namespace TestClient
             return result;
         }
 
-        public static Week GenerateWeek(DateTime firstDayOfAMonth)
+
+        public static Week GenerateWeek()
         {
             int[] days = new int[7];
             int indexPositionOfDate = 0;
-            for (int dayDateNumber = 1; indexPositionOfDate < 6; dayDateNumber++)
+            for (int dayDateNumber = Test; indexPositionOfDate < 6; dayDateNumber++)
             {
                 DateTime now = DateTime.Now;
 
@@ -46,6 +48,7 @@ namespace TestClient
                 indexPositionOfDate = ((int)date.DayOfWeek == 0) ? 6 : (int)date.DayOfWeek - 1;
 
                 days[indexPositionOfDate] = dayDateNumber;
+                Test++;
             }
 
             var week = new Week
@@ -58,8 +61,6 @@ namespace TestClient
 
 
     }
-
-
 
     public class Calendar
     {
