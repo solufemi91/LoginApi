@@ -7,6 +7,7 @@ namespace LoginApi.Models
 {
     public class BookingDetails
     {
+        public int? LoginId { get; set; }
         public DateTime Date { get; set; }
         public string Description { get; set; }
         public string EventName { get; set; }

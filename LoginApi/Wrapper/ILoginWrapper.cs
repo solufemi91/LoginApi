@@ -11,5 +11,7 @@ namespace LoginApi.Wrapper
         IEnumerable<LoginDetails> ValidUser(LoginRequest loginRequest);
 
         IEnumerable<BookingDetails> GetBookingDetails(int id);
+
+        IEnumerable<BookingDetails> PostNewBooking(FormDataRequest formDataRequest);
     }
 }

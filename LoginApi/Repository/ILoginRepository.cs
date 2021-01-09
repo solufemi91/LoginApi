@@ -11,5 +11,7 @@ namespace LoginApi.Repository
         IEnumerable<LoginDetails> GetLogin(LoginRequest loginRequest);
 
         IEnumerable<BookingDetails> GetBookingDetails(int id);
+
+        IEnumerable<BookingDetails> PostNewBooking(FormDataRequest formDataRequest);
     }
 }

@@ -30,6 +30,15 @@ namespace LoginApi.Controllers
             return new JsonResult(result);
         }
 
+
+        [HttpPost]
+        [Route("addBooking")]
+        public JsonResult PostNewBooking([FromBody] FormDataRequest formDataRequest)
+        {
+            var result = _loginWrapper.PostNewBooking(formDataRequest);
+            return new JsonResult(result);
+        }
+
         [HttpGet("{id}")]
         public JsonResult GetBookingDetails(int id)
         {

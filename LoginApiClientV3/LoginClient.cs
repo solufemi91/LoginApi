@@ -29,6 +29,16 @@ namespace LoginApiClientV3
             var content = await response.Content.ReadAsAsync<IEnumerable<BookingDetailsDTO>>();
             return content;
         }
+
+        public async Task<IEnumerable<BookingDetailsDTO>> PostNewBooking(FormDataRequestDTO formDataRequest)
+        {
+            var url = $"{_baseURL}/addBooking";
+            var json = JsonConvert.SerializeObject(formDataRequest);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await _client.PostAsync(url, data);
+            var content = await response.Content.ReadAsAsync<IEnumerable<BookingDetailsDTO>>();
+            return content;
+        }
     }
 
 }

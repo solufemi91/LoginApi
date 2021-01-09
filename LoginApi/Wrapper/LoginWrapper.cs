@@ -28,5 +28,12 @@ namespace LoginApi.Wrapper
 
             return result;
         }
+
+        public IEnumerable<BookingDetails> PostNewBooking(FormDataRequest formDataRequest)
+        {
+            var result = _loginRepository.PostNewBooking(formDataRequest);
+
+            return result;
+        }
     }
 }
