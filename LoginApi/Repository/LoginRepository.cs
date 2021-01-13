@@ -1,15 +1,16 @@
 ﻿using System.Data.SqlClient;
 using System.Collections.Generic;
 using LoginApi.Models;
-using System.Threading.Tasks;
 using Dapper;
+using System.Configuration;
 
 namespace LoginApi.Repository
 {
     public class LoginRepository : ILoginRepository
     {
         //private readonly string connectionString = "Server=LAPTOP-L60MS628;Database=CalanderApp;Trusted_Connection=True;";
-        private readonly string connectionString = "Server=myfirstonlineserver07012021.database.windows.net;Database=CalanderApp;Trusted_Connection=True;";
+        //private readonly string connectionString = "Server=tcp:myfirstonlineserver07012021.database.windows.net,1433;Initial Catalog=CalanderApp;Persist Security Info=False;User ID=solufemi91;Password=Whsmith2!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         private SqlConnection sqlConnection;
 
         public IEnumerable<LoginDetails> GetLogin(LoginRequest loginRequest)

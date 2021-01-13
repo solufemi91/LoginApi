@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.2;net472</TargetFrameworks>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Solufemi91</Authors>
     <PackageId>OlufemiLtd.Util.LoginApiClientV3</PackageId>
     <Company>Olufemi Ltd</Company>
     <Description>Client used to access login api</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>2.1.0</Version>
+    <Version>2.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
