@@ -13,11 +13,16 @@ namespace LoginApi
 
         public IConfiguration Configuration { get; }
 
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
-        {
-            services.AddTransient<LoginWrapper>();
+        {                     
             services.AddMvc();
+            services.Configure<Data>(Configuration.GetSection("Data"));
+            services.AddTransient<LoginWrapper>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Login API", Description = "Swagger Core API" });
@@ -25,6 +30,7 @@ namespace LoginApi
 
                 );
 
+            
             var container = new ServiceResolver(services).GetServiceProvider();
             return container;
         }

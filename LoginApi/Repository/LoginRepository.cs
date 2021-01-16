@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using LoginApi.Models;
 using System.Threading.Tasks;
 using Dapper;
+using Microsoft.Extensions.Options;
 
 namespace LoginApi.Repository
 {
     public class LoginRepository : ILoginRepository
     {
-        //private readonly string connectionString = "Server=LAPTOP-L60MS628;Database=CalanderApp;Trusted_Connection=True;";
-        private readonly string connectionString = "Server=myfirstonlineserver07012021.database.windows.net;Database=CalanderApp;Trusted_Connection=True;";
+        private readonly string connectionString; 
         private SqlConnection sqlConnection;
+
+        public LoginRepository(IOptions<Data> data)
+        {
+            connectionString = data.Value.ConnectionString;
+        }
 
         public IEnumerable<LoginDetails> GetLogin(LoginRequest loginRequest)
         {
