@@ -4,6 +4,7 @@ using LoginApi.Models;
 using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
 
 namespace LoginApi.Repository
 {
@@ -11,10 +12,10 @@ namespace LoginApi.Repository
     {
         private readonly string connectionString; 
         private SqlConnection sqlConnection;
-
-        public LoginRepository(IOptions<Data> data)
+     
+        public LoginRepository(IConfiguration configuration)
         {
-            connectionString = data.Value.ConnectionString;
+            connectionString = configuration["Data:ConnectionString"];
         }
 
         public IEnumerable<LoginDetails> GetLogin(LoginRequest loginRequest)

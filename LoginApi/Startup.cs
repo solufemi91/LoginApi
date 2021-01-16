@@ -21,7 +21,6 @@ namespace LoginApi
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {                     
             services.AddMvc();
-            services.Configure<Data>(Configuration.GetSection("Data"));
             services.AddTransient<LoginWrapper>();
             services.AddSwaggerGen(c =>
             {
